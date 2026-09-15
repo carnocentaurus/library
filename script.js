@@ -1,3 +1,8 @@
+const bookTitleInput = document.querySelector('#book-title-input');
+const bookAuthorInput = document.querySelector('#book-author-input');
+const pagesInput = document.querySelector('#pages-input');
+const yesRadio = document.querySelector('#yes-radio');
+const noRadion = document.querySelector('#no-radio')
 const libraryUl = document.querySelector('#library-ul');
 
 const library = [];
