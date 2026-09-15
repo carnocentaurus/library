@@ -9,6 +9,57 @@
 </head>
 <body>
 
+    <form>
+        <label for="book-title-input">
+            Book Title:
+            <input 
+                id="book-title-input" 
+                name="book_title"
+                type="text" 
+                required 
+                placeholder="Book Title"
+            >
+        </label>
+
+        <label for="book-author-input">
+            Book Author:
+            <input 
+                id="book-author-input" 
+                name="book_author"
+                type="text" 
+                required 
+                placeholder="Book Author"
+            >
+        </label>
+
+        <label for="pages-input">
+            No. of pages:
+            <input 
+                id="pages-input" 
+                name="pages"
+                type="number" 
+                required 
+                placeholder="No. of pages"
+            >
+        </label>
+
+        <fieldset>
+            <legend>Have you read this book?</legend>
+
+            <label for="yes">
+                Yes
+                <input id="yes-radio" value="yes" name="is_book_read" type="radio">
+            </label>
+
+            <label for="no">
+                No
+                <input id="no-radio" value="no" name="is_book_read" type="radio">
+            </label>
+        </fieldset>
+
+        <button>Add</button>
+    </form>
+
     <ul id="library-ul"></ul>
 
     <script src="script.js"></script>
