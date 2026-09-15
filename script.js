@@ -1,3 +1,5 @@
+const libraryUl = document.querySelector('#library-ul');
+
 const library = [];
 
 function Book(id, title, author, pages, read) {
@@ -9,17 +11,35 @@ function Book(id, title, author, pages, read) {
 }
 
 function addBookToLibrary() {
-    const bookId = crypto.randomUUID();
-
-    const newBook = new Book(
-        bookId, 
+    const book1 = new Book(
+        crypto.randomUUID(), 
         'One Piece', 
         'Eichiiro Oda', 
         200, 
         true
     );
 
-    library.push(newBook);
+    const book2 = new Book(
+        crypto.randomUUID(),
+        'Naruto',
+        'Masashi Kishimoto',
+        200,
+        true
+    );
+
+    library.push(book1);
+    library.push(book2);
 }
 
 addBookToLibrary();
+
+function showLibrary() {
+    library.forEach(book => {
+        const bookLi = document.createElement('li');
+        bookLi.textContent = Object.entries(book);
+
+        libraryUl.appendChild(bookLi);
+    });
+}
+
+showLibrary();
