@@ -4,6 +4,7 @@ const pagesInput = document.querySelector('#pages-input');
 const yesRadio = document.querySelector('#yes-radio');
 const noRadio = document.querySelector('#no-radio');
 const addBookButton = document.querySelector('#add-book-button');
+const showLibraryButton = document.querySelector('#show-library-button');
 const libraryUl = document.querySelector('#library-ul');
 
 const library = [];
@@ -38,14 +39,19 @@ addBookButton.addEventListener('click', (event) => {
 
     library.push(book);
 
-    showLibrary();
+    alert('Book added to library');
 });
 
-function showLibrary() {
+showLibraryButton.addEventListener('click', () => {
+    if (library.length === 0) {
+        alert('Your library is empty. Add a book');
+        return;
+    }
+
     library.forEach(book => {
         const bookLi = document.createElement('li');
         bookLi.textContent = Object.entries(book);
 
         libraryUl.appendChild(bookLi);
     });
-}
+});
