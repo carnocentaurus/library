@@ -2,7 +2,8 @@ const bookTitleInput = document.querySelector('#book-title-input');
 const bookAuthorInput = document.querySelector('#book-author-input');
 const pagesInput = document.querySelector('#pages-input');
 const yesRadio = document.querySelector('#yes-radio');
-const noRadion = document.querySelector('#no-radio')
+const noRadio = document.querySelector('#no-radio');
+const addBookButton = document.querySelector('#add-book-button');
 const libraryUl = document.querySelector('#library-ul');
 
 const library = [];
@@ -15,28 +16,30 @@ function Book(id, title, author, pages, read) {
     this.read = read;
 }
 
-function addBookToLibrary() {
-    const book1 = new Book(
-        crypto.randomUUID(), 
-        'One Piece', 
-        'Eichiiro Oda', 
-        200, 
-        true
-    );
+addBookButton.addEventListener('click', (event) => {
+    event.preventDefault();
 
-    const book2 = new Book(
+    let isBookReadText = '';
+
+    if (yesRadio.checked) {
+        isBookReadText = 'You have read this book';
+    }
+    else {
+        isBookReadText = 'You have not read this book';
+    }
+
+    const book = new Book(
         crypto.randomUUID(),
-        'Naruto',
-        'Masashi Kishimoto',
-        200,
-        true
+        bookTitleInput.value,
+        bookAuthorInput.value,
+        pagesInput.value,
+        isBookReadText
     );
 
-    library.push(book1);
-    library.push(book2);
-}
+    library.push(book);
 
-addBookToLibrary();
+    showLibrary();
+});
 
 function showLibrary() {
     library.forEach(book => {
@@ -46,5 +49,3 @@ function showLibrary() {
         libraryUl.appendChild(bookLi);
     });
 }
-
-showLibrary();
