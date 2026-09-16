@@ -33,9 +33,34 @@ addBookButton.addEventListener('click', (event) => {
         crypto.randomUUID(),
         bookTitleInput.value,
         bookAuthorInput.value,
-        pagesInput.value,
+        parseInt(pagesInput.value),
         isBookReadText
     );
+
+    if (bookTitleInput.value.length > 150) {
+        alert("Book title can't be more than 150 characters!");
+        return;
+    }
+    if (bookTitleInput.value.trim() === '') {
+        alert('Please enter book title!');
+        return;
+    }
+    if (bookAuthorInput.value.length > 70) {
+        alert("Book author can't be more than 70 characters!");
+        return;
+    }
+    if (bookAuthorInput.value.trim() === '') {
+        alert('Please enter book author!');
+        return;
+    }
+    if (Number(pagesInput.value) < 1) {
+        alert('Book must have at least one page!');
+        return false;
+    }
+    if (Number(pagesInput.value) > 10000) {
+        alert("Number of pages can't be more than 10,000!");
+        return;
+    }
 
     library.push(book);
 
