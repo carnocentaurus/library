@@ -1,11 +1,15 @@
 const bookTitleInput = document.querySelector('#book-title-input');
 const bookAuthorInput = document.querySelector('#book-author-input');
-const pagesInput = document.querySelector('#pages-input');
+const bookPagesInput = document.querySelector('#book-pages-input');
 const yesRadio = document.querySelector('#yes-radio');
 const noRadio = document.querySelector('#no-radio');
 const addBookButton = document.querySelector('#add-book-button');
 const showLibraryButton = document.querySelector('#show-library-button');
-const libraryUl = document.querySelector('#library-ul');
+const bookIdColumn = document.querySelector('#book-id-column');
+const bookTitleColumn = document.querySelector('#book-title-column');
+const bookAuthorColumn = document.querySelector('#book-author-column');
+const bookPagesColumn = document.querySelector('#book-pages-column');
+const isBookReadColumn = document.querySelector('#is-book-read-column');
 
 const library = [];
 
@@ -33,7 +37,7 @@ addBookButton.addEventListener('click', (event) => {
         crypto.randomUUID(),
         bookTitleInput.value,
         bookAuthorInput.value,
-        parseInt(pagesInput.value),
+        parseInt(bookPagesInput.value),
         isBookReadText
     );
 
@@ -53,11 +57,11 @@ addBookButton.addEventListener('click', (event) => {
         alert('Please enter book author!');
         return;
     }
-    if (Number(pagesInput.value) < 1) {
+    if (parseInt(bookPagesInput.value) < 1) {
         alert('Book must have at least one page!');
         return false;
     }
-    if (Number(pagesInput.value) > 10000) {
+    if (parseInt(bookPagesInput.value) > 10000) {
         alert("Number of pages can't be more than 10,000!");
         return;
     }
@@ -74,9 +78,10 @@ showLibraryButton.addEventListener('click', () => {
     }
 
     library.forEach(book => {
-        const bookLi = document.createElement('li');
-        bookLi.textContent = Object.entries(book);
-
-        libraryUl.appendChild(bookLi);
+        bookIdColumn.textContent = book.id;
+        bookTitleColumn.textContent = book.title;
+        bookAuthorColumn.textContent = book.author;
+        bookPagesColumn.textContent = book.pages;
+        isBookReadColumn.textContent = book.read;
     });
 });

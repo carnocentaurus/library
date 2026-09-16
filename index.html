@@ -34,11 +34,11 @@
             >
         </label>
 
-        <label for="pages-input">
+        <label for="book-pages-input">
             No. of pages:
             <input 
-                id="pages-input" 
-                name="pages"
+                id="book-pages-input" 
+                name="book_pages"
                 type="number" 
                 required 
                 placeholder="No. of pages"
@@ -66,7 +66,25 @@
 
     <button id="show-library-button">Show Library</button>
 
-    <ul id="library-ul"></ul>
+    <table>
+        <caption>Library</caption>
+
+        <thead>
+            <th>ID</th>
+            <th>Title</th>
+            <th>Author</th>
+            <th>Pages</th>
+            <th>Read</th>
+        </thead>
+
+        <tbody>
+            <td id="book-id-column"></td>
+            <td id="book-title-column"></td>
+            <td id="book-author-column"></td>
+            <td id="book-pages-column"></td>
+            <td id="is-book-read-column"></td>
+        </tbody>
+    </table>
 
     <script src="script.js"></script>
     
