@@ -5,11 +5,7 @@ const yesRadio = document.querySelector('#yes-radio');
 const noRadio = document.querySelector('#no-radio');
 const addBookButton = document.querySelector('#add-book-button');
 const showLibraryButton = document.querySelector('#show-library-button');
-const bookIdColumn = document.querySelector('#book-id-column');
-const bookTitleColumn = document.querySelector('#book-title-column');
-const bookAuthorColumn = document.querySelector('#book-author-column');
-const bookPagesColumn = document.querySelector('#book-pages-column');
-const isBookReadColumn = document.querySelector('#is-book-read-column');
+const tbody = document.querySelector('tbody');
 
 const library = [];
 
@@ -78,10 +74,29 @@ showLibraryButton.addEventListener('click', () => {
     }
 
     library.forEach(book => {
-        bookIdColumn.textContent = book.id;
-        bookTitleColumn.textContent = book.title;
-        bookAuthorColumn.textContent = book.author;
-        bookPagesColumn.textContent = book.pages;
-        isBookReadColumn.textContent = book.read;
+        const tr = document.createElement('tr');
+
+        const bookId = document.createElement('td');
+        bookId.textContent = book.id;
+
+        const bookTitle = document.createElement('td');
+        bookTitle.textContent = book.title;
+
+        const bookAuthor = document.createElement('td');
+        bookAuthor.textContent = book.author;
+
+        const bookPages = document.createElement('td');
+        bookPages.textContent = book.pages;
+
+        const isBookRead = document.createElement('td');
+        isBookRead.textContent = book.read;
+
+        tr.appendChild(bookId);
+        tr.appendChild(bookTitle);
+        tr.appendChild(bookAuthor);
+        tr.appendChild(bookPages);
+        tr.appendChild(isBookRead);
+
+        tbody.appendChild(tr);
     });
 });
