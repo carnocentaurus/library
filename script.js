@@ -73,6 +73,8 @@ showLibraryButton.addEventListener('click', () => {
         return;
     }
 
+    tbody.innerHTML = '';
+
     library.forEach(book => {
         const tr = document.createElement('tr');
 
