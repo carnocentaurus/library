@@ -17,6 +17,10 @@ function Book(id, title, author, pages, read) {
     this.read = read;
 }
 
+function removeBookFromLibrary() {
+    alert(true)
+}
+
 addBookButton.addEventListener('click', (event) => {
     event.preventDefault();
 
@@ -93,11 +97,16 @@ showLibraryButton.addEventListener('click', () => {
         const isBookRead = document.createElement('td');
         isBookRead.textContent = book.read;
 
+        const removeButton = document.createElement('button');
+        removeButton.textContent = 'Remove';
+        removeButton.addEventListener('click', removeBookFromLibrary);
+
         tr.appendChild(bookId);
         tr.appendChild(bookTitle);
         tr.appendChild(bookAuthor);
         tr.appendChild(bookPages);
         tr.appendChild(isBookRead);
+        tr.appendChild(removeButton);
 
         tbody.appendChild(tr);
     });
