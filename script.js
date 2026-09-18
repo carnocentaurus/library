@@ -16,6 +16,12 @@ function Book(id, title, author, pages, read) {
     this.read = read;
 }
 
+Book.prototype.switchReadStatus = function() {
+    alert(true)
+}
+
+const bookObject = new Book();
+
 function showLibrary() {
     tbody.innerHTML = '';
 
@@ -43,6 +49,7 @@ function showLibrary() {
 
         const switchReadStatusButton = document.createElement('button');
         switchReadStatusButton.textContent = 'Switch Read Status';
+        switchReadStatusButton.addEventListener('click', bookObject.switchReadStatus);
 
         tr.appendChild(bookId);
         tr.appendChild(bookTitle);
@@ -67,10 +74,10 @@ addBookButton.addEventListener('click', (event) => {
     let isBookReadText = '';
 
     if (yesRadio.checked) {
-        isBookReadText = 'You have read this book';
+        isBookReadText = 'Was read';
     }
     else {
-        isBookReadText = 'You have not read this book';
+        isBookReadText = 'Not read';
     }
 
     const book = new Book(
