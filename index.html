@@ -34,6 +34,12 @@
             >
         </label>
 
+        <!-- onkeydown logic: dont allow all characters that are not numbers to be typed in -->
+        <!--
+            Source - https://stackoverflow.com/a/54163655
+            Posted by A. Morel, modified by community. See post 'Timeline' for change history
+            Retrieved 2026-09-18, License - CC BY-SA 4.0
+        -->
         <label for="book-pages-input">
             No. of pages:
             <input 
@@ -44,6 +50,9 @@
                 placeholder="No. of pages"
                 min="1"
                 max="10000"
+                onkeydown="javascript: return ['Backspace','Delete','ArrowLeft','ArrowRight']
+                    .includes(event.code) ? true : !isNaN(Number(event.key)) && event.code!=='Space'
+                "
             >
         </label>
 

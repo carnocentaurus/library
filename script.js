@@ -17,11 +17,6 @@ function Book(id, title, author, pages, read) {
 }
 
 function showLibrary() {
-    if (library.length === 0) {
-        alert('Your library is empty. Add a book');
-        return;
-    }
-
     tbody.innerHTML = '';
 
     library.forEach(book => {
