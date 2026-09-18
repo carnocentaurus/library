@@ -41,12 +41,16 @@ function showLibrary() {
         removeButton.textContent = 'Remove';
         removeButton.addEventListener('click', removeBookFromLibrary);
 
+        const switchReadStatusButton = document.createElement('button');
+        switchReadStatusButton.textContent = 'Switch Read Status';
+
         tr.appendChild(bookId);
         tr.appendChild(bookTitle);
         tr.appendChild(bookAuthor);
         tr.appendChild(bookPages);
         tr.appendChild(isBookRead);
         tr.appendChild(removeButton);
+        tr.appendChild(switchReadStatusButton);
 
         tbody.appendChild(tr);
     });
