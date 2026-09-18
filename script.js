@@ -16,7 +16,7 @@ function Book(id, title, author, pages, read) {
     this.read = read;
 }
 
-Book.prototype.switchReadStatus = function() {
+Book.prototype.toggleReadStatus = function() {
     alert(true)
 }
 
@@ -47,9 +47,9 @@ function showLibrary() {
         removeButton.textContent = 'Remove';
         removeButton.addEventListener('click', removeBookFromLibrary);
 
-        const switchReadStatusButton = document.createElement('button');
-        switchReadStatusButton.textContent = 'Switch Read Status';
-        switchReadStatusButton.addEventListener('click', bookObject.switchReadStatus);
+        const toggleReadStatusButton = document.createElement('button');
+        toggleReadStatusButton.textContent = 'Toggle Read Status';
+        toggleReadStatusButton.addEventListener('click', bookObject.toggleReadStatus);
 
         tr.appendChild(bookId);
         tr.appendChild(bookTitle);
