@@ -57,15 +57,17 @@ function showLibrary() {
         tr.appendChild(bookPages);
         tr.appendChild(isBookRead);
         tr.appendChild(removeButton);
-        tr.appendChild(switchReadStatusButton);
+        tr.appendChild(toggleReadStatusButton);
 
         tbody.appendChild(tr);
     });
 }
 
 function removeBookFromLibrary(event) {
-    library.splice(event.target.parentElement, 1);
-    showLibrary();
+    if (confirm('Remove book from library?')) {
+        library.splice(event.target.parentElement, 1);
+        showLibrary();
+    }
 }
 
 addBookButton.addEventListener('click', (event) => {
