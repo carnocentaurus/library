@@ -17,8 +17,50 @@ function Book(id, title, author, pages, read) {
     this.read = read;
 }
 
-function removeBookFromLibrary() {
-    alert(true)
+function showLibrary() {
+    if (library.length === 0) {
+        alert('Your library is empty. Add a book');
+        return;
+    }
+
+    tbody.innerHTML = '';
+
+    library.forEach(book => {
+        const tr = document.createElement('tr');
+
+        const bookId = document.createElement('td');
+        bookId.textContent = book.id;
+
+        const bookTitle = document.createElement('td');
+        bookTitle.textContent = book.title;
+
+        const bookAuthor = document.createElement('td');
+        bookAuthor.textContent = book.author;
+
+        const bookPages = document.createElement('td');
+        bookPages.textContent = book.pages;
+
+        const isBookRead = document.createElement('td');
+        isBookRead.textContent = book.read;
+
+        const removeButton = document.createElement('button');
+        removeButton.textContent = 'Remove';
+        removeButton.addEventListener('click', removeBookFromLibrary);
+
+        tr.appendChild(bookId);
+        tr.appendChild(bookTitle);
+        tr.appendChild(bookAuthor);
+        tr.appendChild(bookPages);
+        tr.appendChild(isBookRead);
+        tr.appendChild(removeButton);
+
+        tbody.appendChild(tr);
+    });
+}
+
+function removeBookFromLibrary(event) {
+    library.splice(event.target.parentElement, 1);
+    showLibrary();
 }
 
 addBookButton.addEventListener('click', (event) => {
@@ -71,43 +113,4 @@ addBookButton.addEventListener('click', (event) => {
     alert('Book added to library');
 });
 
-showLibraryButton.addEventListener('click', () => {
-    if (library.length === 0) {
-        alert('Your library is empty. Add a book');
-        return;
-    }
-
-    tbody.innerHTML = '';
-
-    library.forEach(book => {
-        const tr = document.createElement('tr');
-
-        const bookId = document.createElement('td');
-        bookId.textContent = book.id;
-
-        const bookTitle = document.createElement('td');
-        bookTitle.textContent = book.title;
-
-        const bookAuthor = document.createElement('td');
-        bookAuthor.textContent = book.author;
-
-        const bookPages = document.createElement('td');
-        bookPages.textContent = book.pages;
-
-        const isBookRead = document.createElement('td');
-        isBookRead.textContent = book.read;
-
-        const removeButton = document.createElement('button');
-        removeButton.textContent = 'Remove';
-        removeButton.addEventListener('click', removeBookFromLibrary);
-
-        tr.appendChild(bookId);
-        tr.appendChild(bookTitle);
-        tr.appendChild(bookAuthor);
-        tr.appendChild(bookPages);
-        tr.appendChild(isBookRead);
-        tr.appendChild(removeButton);
-
-        tbody.appendChild(tr);
-    });
-});
+showLibraryButton.addEventListener('click', showLibrary);
