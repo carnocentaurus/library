@@ -4,7 +4,6 @@ const bookPagesInput = document.querySelector('#book-pages-input');
 const yesRadio = document.querySelector('#yes-radio');
 const noRadio = document.querySelector('#no-radio');
 const addBookButton = document.querySelector('#add-book-button');
-const showLibraryButton = document.querySelector('#show-library-button');
 const tbody = document.querySelector('tbody');
 
 const library = [];
@@ -111,6 +110,6 @@ addBookButton.addEventListener('click', (event) => {
     library.push(book);
 
     alert('Book added to library');
-});
 
-showLibraryButton.addEventListener('click', showLibrary);
+    showLibrary();
+});
