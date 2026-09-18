@@ -16,8 +16,8 @@ function Book(id, title, author, pages, read) {
     this.read = read;
 }
 
-Book.prototype.toggleReadStatus = function() {
-    alert(true)
+Book.prototype.toggleReadStatus = function(event) {
+    console.log(event.target.previousSibling.innerText)
 }
 
 const bookObject = new Book();
@@ -43,21 +43,21 @@ function showLibrary() {
         const isBookRead = document.createElement('td');
         isBookRead.textContent = book.read;
 
-        const removeButton = document.createElement('button');
-        removeButton.textContent = 'Remove';
-        removeButton.addEventListener('click', removeBookFromLibrary);
-
         const toggleReadStatusButton = document.createElement('button');
         toggleReadStatusButton.textContent = 'Toggle Read Status';
         toggleReadStatusButton.addEventListener('click', bookObject.toggleReadStatus);
+
+        const removeButton = document.createElement('button');
+        removeButton.textContent = 'Remove';
+        removeButton.addEventListener('click', removeBookFromLibrary);
 
         tr.appendChild(bookId);
         tr.appendChild(bookTitle);
         tr.appendChild(bookAuthor);
         tr.appendChild(bookPages);
         tr.appendChild(isBookRead);
-        tr.appendChild(removeButton);
         tr.appendChild(toggleReadStatusButton);
+        tr.appendChild(removeButton);
 
         tbody.appendChild(tr);
     });
