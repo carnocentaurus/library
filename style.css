@@ -7,13 +7,24 @@
 body {
     display: grid;
     grid-template-columns: 20% 80%;
+    column-gap: 50px;
 
     padding: 20px;
+    width: 100%;
     background-color: #dbe2e9;
 }
 
 form {
     display: grid;
+    row-gap: 20px;
+}
+
+form label input:not(input[type="radio"]) {
+    width: 100%;
+}
+
+table {
+    width: fit-content;
 }
 
 table, thead, tr, th, td {
