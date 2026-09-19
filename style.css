@@ -1,4 +1,13 @@
 @font-face {
+    font-family: 'Brunson';
+    src: url('fonts/Brunson.woff2') format('woff2'),
+        url('fonts/Brunson.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
     font-family: 'Roboto';
     src: url('fonts/Roboto-Regular.woff2') format('woff2'),
         url('fonts/Roboto-Regular.woff') format('woff');
@@ -27,6 +36,14 @@ body {
 form {
     display: grid;
     row-gap: 20px;
+}
+
+form label {
+    font-size: 0.8rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: #666a6d;
 }
 
 form label input:not(input[type="radio"]) {
