@@ -38,11 +38,17 @@ form {
     row-gap: 30px;
 }
 
-form label {
+form label:not(.radio-label) {
     font-size: 0.8rem;
     font-weight: bold;
     text-transform: uppercase;
     letter-spacing: 1px;
+    color: #666a6d;
+}
+
+.radio-label {
+    font-size: 0.8rem;
+    text-transform: uppercase;
     color: #666a6d;
 }
 
@@ -64,6 +70,17 @@ form label input:not(input[type="radio"]):focus {
 
 #book-pages-input {
     width: 40%;
+}
+
+fieldset {
+    border: 1px solid #666a6d;
+    padding: 10px 20px 15px 10px;
+}
+
+fieldset legend {
+    font-size: 0.8rem;
+    color: #666a6d;
+    padding: 0 5px;
 }
 
 table {
