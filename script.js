@@ -17,7 +17,17 @@ function Book(id, title, author, pages, read) {
 }
 
 Book.prototype.toggleReadStatus = function(event) {
-    console.log(event.target.previousSibling.innerText)
+    const targetBookId = event.target.parentElement.firstChild.innerText;
+    const targetBookIndex = library.map(book => book.id).indexOf(targetBookId);
+    
+    if (library[targetBookIndex].read === 'Was read') {
+        library[targetBookIndex].read = 'Not read';
+    }
+    else if (library[targetBookIndex].read === 'Not read') {
+        library[targetBookIndex].read = 'Was read';
+    }
+
+    event.target.previousSibling.innerText = library[targetBookIndex].read;
 }
 
 const bookObject = new Book();
@@ -104,6 +114,10 @@ addBookButton.addEventListener('click', (event) => {
     }
     if (bookAuthorInput.value.trim() === '') {
         alert('Please enter book author!');
+        return;
+    }
+    if (bookPagesInput.value.trim() === '') {
+        alert('Please enter number of pages!');
         return;
     }
     if (parseInt(bookPagesInput.value) < 1) {
