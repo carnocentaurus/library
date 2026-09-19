@@ -91,6 +91,21 @@ fieldset legend {
     background-color: #666a6d;
 }
 
+/* show the indicator (dot/circle) when checked */
+.radio-label input:checked ~ .custom-radio::after {
+    display: block;
+}
+
+/* style the indicator (dot/circle) */
+.radio-label .custom-radio::after {
+    top: 9px;
+	left: 9px;
+	width: 8px;
+	height: 8px;
+	border-radius: 50%;
+	background: #fff;
+}
+
 /* hide browser default radio button */
 form label input[type="radio"] {
     position: absolute;
@@ -107,6 +122,13 @@ form label input[type="radio"] {
     width: 25px;
     background-color: #eee;;
     border-radius: 50%;
+}
+
+/* create the indicator (the dot/circle - hidden when not checked) */
+.custom-radio::after {
+    content: '';
+    position: absolute;
+    display: none;
 }
 
 table {
