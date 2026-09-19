@@ -68,6 +68,13 @@ form label input:not(input[type="radio"]):focus {
     outline: none;
 }
 
+/* hide browser default radio button */
+form label input[type="radio"] {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+}
+
 #book-pages-input {
     width: 40%;
 }
