@@ -87,6 +87,10 @@ fieldset legend {
     background-color: #ccc;
 }
 
+.radio-label input:checked ~ .custom-radio {
+    background-color: #666a6d;
+}
+
 /* hide browser default radio button */
 form label input[type="radio"] {
     position: absolute;
