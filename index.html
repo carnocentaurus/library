@@ -11,25 +11,23 @@
 
     <form>
         <label for="book-title-input">
-            Book Title:
+            Title<br>
             <input 
                 id="book-title-input" 
                 name="book_title"
                 type="text" 
                 required 
-                placeholder="Book Title"
                 maxlength="150"
             >
         </label>
 
         <label for="book-author-input">
-            Book Author:
+            Author<br>
             <input 
                 id="book-author-input" 
                 name="book_author"
                 type="text" 
                 required 
-                placeholder="Book Author"
                 maxlength="70"
             >
         </label>
@@ -41,13 +39,12 @@
             Retrieved 2026-09-18, License - CC BY-SA 4.0
         -->
         <label for="book-pages-input">
-            No. of pages:
+            Number of pages<br>
             <input 
                 id="book-pages-input" 
                 name="book_pages"
                 type="number" 
                 required 
-                placeholder="No. of pages"
                 min="1"
                 max="10000"
                 onkeydown="javascript: return ['Backspace','Delete','ArrowLeft','ArrowRight']

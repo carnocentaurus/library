@@ -9,6 +9,11 @@ body {
     grid-template-columns: 20% 80%;
 
     padding: 20px;
+    background-color: #dbe2e9;
+}
+
+form {
+    display: grid;
 }
 
 table, thead, tr, th, td {
