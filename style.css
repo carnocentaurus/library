@@ -68,7 +68,7 @@ form label input:not(input[type="radio"]):focus {
 
 fieldset {
     border: 1px solid #666a6d;
-    padding: 10px 20px 15px 10px;
+    padding: 15px 20px 5px 10px;
 }
 
 fieldset legend {
@@ -78,6 +78,16 @@ fieldset legend {
 }
 
 .radio-label {
+    display: block;
+    position: relative;
+    padding-left: 35px;
+    margin-bottom: 12px;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+
     font-size: 0.8rem;
     text-transform: uppercase;
     color: #666a6d;
@@ -98,10 +108,10 @@ fieldset legend {
 
 /* style the indicator (dot/circle) */
 .radio-label .custom-radio::after {
-    top: 9px;
-	left: 9px;
-	width: 8px;
-	height: 8px;
+    top: 4px;
+	left: 4.5px;
+	width: 7px;
+	height: 7px;
 	border-radius: 50%;
 	background: #fff;
 }
@@ -118,9 +128,10 @@ form label input[type="radio"] {
     position: absolute;
     top: 0;
     left: 0;
-    height: 25px;
-    width: 25px;
-    background-color: #eee;;
+    height: 15px;
+    width: 15px;
+    margin-left: 10px;
+    background-color: #fff;
     border-radius: 50%;
 }
 
