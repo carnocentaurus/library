@@ -28,7 +28,7 @@ body {
     grid-template-columns: 20% 80%;
     column-gap: 50px;
 
-    padding: 50px;
+    padding: 50px 100px 50px 50px;
     width: 100%;
     background-color: #dbe2e9;
 }
@@ -174,7 +174,9 @@ form label input[type="radio"] {
 }
 
 table {
-    width: fit-content;
+    width: 100%;
+    table-layout: fixed;
+    margin-right: 50px;
 }
 
 table, thead, tr, th, td {
