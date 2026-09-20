@@ -38,6 +38,22 @@ form {
     row-gap: 30px;
 }
 
+.logo-div {
+    display: flex;
+    gap: 15px;
+}
+
+.book-icon {
+    filter: brightness(0) saturate(100%) invert(42%) sepia(5%) saturate(357%) hue-rotate(163deg) 
+        brightness(95%) contrast(87%);
+    width: 36px;
+    padding-bottom: 3px;
+}
+
+.library-text {
+    color: #666a6d;
+}
+
 form label:not(.radio-label) {
     font-size: 0.8rem;
     font-weight: bold;
