@@ -179,7 +179,14 @@ table {
     margin-right: 50px;
 }
 
+table th {
+    color: #666a6d;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    padding: 5px 0;
+}
+
 table, thead, tr, th, td {
-    border: 1px solid black;
+    border: 2px solid #666a6d;
     border-collapse: collapse;
 }
