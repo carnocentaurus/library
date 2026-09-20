@@ -1,4 +1,4 @@
-const errorMessage = document.querySelector('.error-message');
+const message = document.querySelector('.message');
 const bookTitleInput = document.querySelector('#book-title-input');
 const bookAuthorInput = document.querySelector('#book-author-input');
 const bookPagesInput = document.querySelector('#book-pages-input');
@@ -102,38 +102,38 @@ addBookButton.addEventListener('click', (event) => {
     );
 
     if (bookTitleInput.value.length > 150) {
-        errorMessage.textContent = "Book title can't be more than 150 characters";
+        message.textContent = "Book title can't be more than 150 characters";
         return;
     }
     if (bookTitleInput.value.trim() === '') {
-        errorMessage.textContent = 'Enter book title';
+        message.textContent = 'Enter book title';
         return;
     }
     if (bookAuthorInput.value.length > 70) {
-        errorMessage.textContent = "Book author can't be more than 70 characters";
+        message.textContent = "Book author can't be more than 70 characters";
         return;
     }
     if (bookAuthorInput.value.trim() === '') {
-        errorMessage.textContent = 'Enter book author';
+        message.textContent = 'Enter book author';
         return;
     }
     if (bookPagesInput.value.trim() === '') {
-        errorMessage.textContent = 'Enter number of pages';
+        message.textContent = 'Enter number of pages';
         return;
     }
     if (parseInt(bookPagesInput.value) < 1) {
-        errorMessage.textContent = 'Book must have at least one page';
+        message.textContent = 'Book must have at least one page';
         return false;
     }
     if (parseInt(bookPagesInput.value) > 10000) {
-        errorMessage.textContent = "Number of pages can't be more than 10,000";
+        message.textContent = "Number of pages can't be more than 10,000";
         return;
     }
 
     library.push(book);
 
     alert('Book added to library!');
-    errorMessage.textContent = '';
+    message.textContent = '';
 
     showLibrary();
 });
