@@ -159,6 +159,7 @@ form label input[type="radio"] {
 }
 
 #add-book-button {
+    width: 100%;
     font-size: 1rem;
     text-transform: uppercase;
     color: #dbe2e9;
@@ -168,7 +169,8 @@ form label input[type="radio"] {
     padding: 4px 0;
 }
 
-#add-book-button:hover {
+#add-book-button:hover,
+table tbody tr button {
     background-color: #727472;
     cursor: pointer;
 }
@@ -190,8 +192,20 @@ table th {
 table, thead, tr, th, td {
     font-size: 1rem;
     font-weight: bold;
+    text-align: center;
     color: #666a6d;
     border: 2px solid #666a6d;
     border-collapse: collapse;
     padding: 10px;
+}
+
+table tbody tr button {
+    width: fit-content;
+    font-size: 0.7rem;
+    color: #dbe2e9;
+    background-color: #666a6d;
+    border: none;
+    border-radius: 2px;
+    padding: 5px 10px;
+    margin: 10px;
 }
