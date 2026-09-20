@@ -175,6 +175,7 @@ form label input[type="radio"] {
 
 table {
     width: 100%;
+    height: min-content;
     table-layout: fixed;
     margin-right: 50px;
 }
@@ -187,6 +188,10 @@ table th {
 }
 
 table, thead, tr, th, td {
+    font-size: 1rem;
+    font-weight: bold;
+    color: #666a6d;
     border: 2px solid #666a6d;
     border-collapse: collapse;
+    padding: 10px;
 }
