@@ -142,6 +142,21 @@ form label input[type="radio"] {
     display: none;
 }
 
+#add-book-button {
+    font-size: 1rem;
+    text-transform: uppercase;
+    color: #dbe2e9;
+    background-color: #666a6d;
+    border: none;
+    border-radius: 2px;
+    padding: 4px 0;
+}
+
+#add-book-button:hover {
+    background-color: #727472;
+    cursor: pointer;
+}
+
 table {
     width: fit-content;
 }
