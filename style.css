@@ -54,9 +54,12 @@ form {
     color: #666a6d;
 }
 
-.message {
-    font-size: 1rem;
+.error {
     color: #a91b0d;
+}
+
+.success {
+    color: #03c04a;
 }
 
 form label:not(.radio-label) {

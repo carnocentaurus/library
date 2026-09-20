@@ -1,4 +1,4 @@
-const message = document.querySelector('.message');
+const message = document.querySelector('#message');
 const bookTitleInput = document.querySelector('#book-title-input');
 const bookAuthorInput = document.querySelector('#book-author-input');
 const bookPagesInput = document.querySelector('#book-pages-input');
@@ -81,6 +81,18 @@ function removeBookFromLibrary(event) {
     }
 }
 
+function handleMessageDisplay(messageText, type) {
+    if (type === 'error') {
+        message.classList.add('error');
+    }
+    else {
+        message.classList.add('success');
+        setTimeout(() => message.textContent = '', 5000);
+    }
+    
+    message.textContent = messageText;
+}
+
 addBookButton.addEventListener('click', (event) => {
     event.preventDefault();
 
@@ -102,38 +114,37 @@ addBookButton.addEventListener('click', (event) => {
     );
 
     if (bookTitleInput.value.length > 150) {
-        message.textContent = "Book title can't be more than 150 characters";
+        handleMessageDisplay("Book title can't be more than 150 characters", 'error');
         return;
     }
     if (bookTitleInput.value.trim() === '') {
-        message.textContent = 'Enter book title';
+        handleMessageDisplay('Enter book title', 'error');
         return;
     }
     if (bookAuthorInput.value.length > 70) {
-        message.textContent = "Book author can't be more than 70 characters";
+        handleMessageDisplay("Book author can't be more than 70 characters", 'error');
         return;
     }
     if (bookAuthorInput.value.trim() === '') {
-        message.textContent = 'Enter book author';
+        handleMessageDisplay('Enter book author', 'error');
         return;
     }
     if (bookPagesInput.value.trim() === '') {
-        message.textContent = 'Enter number of pages';
+        handleMessageDisplay('Enter number of pages', 'error');
         return;
     }
     if (parseInt(bookPagesInput.value) < 1) {
-        message.textContent = 'Book must have at least one page';
+        handleMessageDisplay('Book must have at least one page', 'error');
         return false;
     }
     if (parseInt(bookPagesInput.value) > 10000) {
-        message.textContent = "Number of pages can't be more than 10,000";
+        handleMessageDisplay("Number of pages can't be more than 10000", 'error');
         return;
     }
 
     library.push(book);
 
-    alert('Book added to library!');
-    message.textContent = '';
+    handleMessageDisplay('Book added to library', 'success');
 
     showLibrary();
 });
