@@ -36,7 +36,12 @@ body {
     padding: 0 100px 0 50px;
     width: 100%;
     max-height: 550px;
+    overflow-y: scroll;
     background-color: #dbe2e9;
+}
+
+.parent-container::-webkit-scrollbar {
+    display: none;
 }
 
 form {
