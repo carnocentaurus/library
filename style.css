@@ -48,15 +48,9 @@ form {
     gap: 15px;
 }
 
-.book-icon {
-    filter: brightness(0) saturate(100%) invert(42%) sepia(5%) saturate(357%) hue-rotate(163deg) 
-        brightness(95%) contrast(87%);
-    width: 36px;
-    padding-bottom: 3px;
-}
-
-.library-text {
+.logo-div h1 {
     color: #666a6d;
+    letter-spacing: 2px;
 }
 
 .error {
@@ -189,7 +183,28 @@ table tbody tr button {
     cursor: pointer;
 }
 
+.empty-library-div {
+    grid-area: 2 / 2 / 3 / 3;
+    align-content: center;
+    
+    height: 500px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.empty-library-div img {
+    width: 120px;
+    filter: brightness(0) saturate(100%) invert(42%) sepia(5%) saturate(357%) hue-rotate(163deg) 
+        brightness(95%) contrast(87%);
+}
+
+.empty-library-div p {
+    font-size: 0.8rem;
+    color: #666a6d;
+}
+
 table {
+    display: none;
     grid-area: 2 / 2 / 3 / 3;
 
     width: 100%;
