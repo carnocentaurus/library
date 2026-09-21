@@ -80,6 +80,7 @@ form label input:not(input[type="radio"]) {
     color: #666a6d;
     background-color: #fff;
     margin-top: 2px;
+    overflow-x: scroll;
 }
 
 form label input:not(input[type="radio"]):focus {
@@ -216,4 +217,8 @@ table tbody tr button {
     border-radius: 2px;
     padding: 5px 10px;
     margin: 10px;
+}
+
+table tbody tr:nth-of-type(even) {
+    background-color: #cbd5e1;
 }
