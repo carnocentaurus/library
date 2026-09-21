@@ -5,6 +5,8 @@ const bookPagesInput = document.querySelector('#book-pages-input');
 const yesRadio = document.querySelector('#yes-radio');
 const noRadio = document.querySelector('#no-radio');
 const addBookButton = document.querySelector('#add-book-button');
+const emptyLibraryDiv = document.querySelector('.empty-library-div');
+const table = document.querySelector('table');
 const tbody = document.querySelector('tbody');
 
 const library = [];
@@ -34,6 +36,15 @@ Book.prototype.toggleReadStatus = function(event) {
 const bookObject = new Book();
 
 function showLibrary() {
+    if (library.length !== 0) {
+        emptyLibraryDiv.style.display = 'none';
+        table.style.visibility = 'visible';
+    }
+    else {
+        emptyLibraryDiv.style.display = 'block';
+        table.style.visibility = 'hidden';
+    }
+
     tbody.innerHTML = '';
 
     library.forEach(book => {

@@ -204,7 +204,7 @@ table tbody tr button {
 }
 
 table {
-    display: none;
+    visibility: hidden;
     grid-area: 2 / 2 / 3 / 3;
 
     width: 100%;
