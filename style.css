@@ -192,7 +192,8 @@ table {
 }
 
 table th {
-    color: #666a6d;
+    color: #dbe2e9;
+    background-color: #666a6d;
     text-transform: uppercase;
     letter-spacing: 2px;
     padding: 5px 0;
