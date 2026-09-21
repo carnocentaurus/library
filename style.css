@@ -16,12 +16,12 @@
 
 body {
     background-color: #dbe2e9;
+    margin: 50px 0 100px;
 }
 
 .parent-container {
     display: grid;
     grid-template-columns: 20% 80%;
-    grid-template-rows: 50px 100% 50px;
     column-gap: 50px;
 
     padding: 0 100px 0 50px;
@@ -213,6 +213,8 @@ table {
 }
 
 table th {
+    position: sticky;
+    top: 0;
     color: #dbe2e9;
     background-color: #666a6d;
     text-transform: uppercase;
