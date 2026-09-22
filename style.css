@@ -39,6 +39,9 @@ form {
     display: grid;
     grid-area: 2 / 1 / 3 / 2;
     row-gap: 30px;
+
+    position: sticky;
+    top: 0;
     
     max-height: 500px;
 }
