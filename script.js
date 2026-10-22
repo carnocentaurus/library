@@ -19,20 +19,20 @@ class Book {
         this.pages = pages;
         this.read = read;
     }
-}
 
-Book.prototype.toggleReadStatus = function(event) {
-    const targetBookId = event.target.parentElement.firstChild.innerText;
-    const targetBookIndex = library.map(book => book.id).indexOf(targetBookId);
-    
-    if (library[targetBookIndex].read === 'Was read') {
-        library[targetBookIndex].read = 'Not read';
-    }
-    else if (library[targetBookIndex].read === 'Not read') {
-        library[targetBookIndex].read = 'Was read';
-    }
+    toggleReadStatus(event) {
+        const targetBookId = event.target.parentElement.firstChild.innerText;
+        const targetBookIndex = library.map(book => book.id).indexOf(targetBookId);
 
-    event.target.previousSibling.innerText = library[targetBookIndex].read;
+        if (library[targetBookIndex].read === 'Was read') {
+            library[targetBookIndex].read = 'Not read';
+        }
+        else if (library[targetBookIndex].read === 'Not read') {
+            library[targetBookIndex].read = 'Was read';
+        }
+
+        event.target.previousSibling.innerText = library[targetBookIndex].read;
+    }
 }
 
 const bookObject = new Book();
