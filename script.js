@@ -35,8 +35,6 @@ class Book {
     }
 }
 
-const bookObject = new Book();
-
 function showLibrary() {
     if (library.length !== 0) {
         emptyLibraryDiv.style.display = 'none';
@@ -69,7 +67,7 @@ function showLibrary() {
 
         const toggleReadStatusButton = document.createElement('button');
         toggleReadStatusButton.textContent = 'Toggle Read Status';
-        toggleReadStatusButton.addEventListener('click', bookObject.toggleReadStatus);
+        toggleReadStatusButton.addEventListener('click', Book.prototype.toggleReadStatus);
 
         const removeButton = document.createElement('button');
         removeButton.textContent = 'Remove';
