@@ -87,7 +87,10 @@ function showLibrary() {
 
 function removeBookFromLibrary(event) {
     if (confirm('Remove book from library?')) {
-        library.splice(event.target.parentElement, 1);
+        const targetBookId = event.target.parentElement.firstChild.innerText;
+        const targetBookIndex = library.map(book => book.id).indexOf(targetBookId);
+
+        library.splice(targetBookIndex, 1);
         showLibrary();
     }
 }
